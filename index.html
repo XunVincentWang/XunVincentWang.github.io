@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Academic website of Xun (Vincent) Wang, Assistant Professor of Mechanical Engineering at South Dakota Mines.">
-  <title>Xun (Vincent) Wang | South Dakota Mines</title>
+  <meta name="description" content="Academic website of Xun (Vincent) Wang, Assistant Professor of Mechanical Engineering at the South Dakota School of Mines and Technology.">
+  <title>Xun (Vincent) Wang | Mechanical Engineering</title>
 
   <style>
     :root {
@@ -12,36 +12,32 @@
       --muted: #6b7280;
       --line: #e5e7eb;
       --accent: #123b63;
-      --bg: #ffffff;
       --soft: #f7f9fb;
+      --white: #ffffff;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
-      background: var(--bg);
+      background: var(--white);
       line-height: 1.65;
     }
 
     header {
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 20;
       background: rgba(255,255,255,0.96);
       border-bottom: 1px solid var(--line);
     }
 
     nav {
-      max-width: 980px;
+      max-width: 1050px;
       margin: 0 auto;
       padding: 15px 24px;
       display: flex;
@@ -57,25 +53,40 @@
       white-space: nowrap;
     }
 
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
     .nav-links a {
       color: var(--text);
       text-decoration: none;
-      margin-left: 22px;
       font-size: 15px;
     }
 
-    .nav-links a:hover {
-      color: var(--accent);
-    }
+    .nav-links a:hover { color: var(--accent); }
 
     main {
-      max-width: 980px;
+      max-width: 1050px;
       margin: 0 auto;
-      padding: 70px 24px 50px;
+      padding: 64px 24px 48px;
     }
 
     .hero {
-      padding: 20px 0 42px;
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 44px;
+      align-items: center;
+      padding: 10px 0 48px;
+    }
+
+    .profile-photo {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid var(--line);
     }
 
     h1 {
@@ -101,7 +112,7 @@
       margin-top: 24px;
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
     }
 
     .button {
@@ -126,18 +137,11 @@
     }
 
     h2 {
-      font-size: 26px;
+      font-size: 27px;
       margin: 0 0 18px;
     }
 
-    p {
-      margin: 0 0 14px;
-    }
-
-    ul {
-      margin: 8px 0 0;
-      padding-left: 22px;
-    }
+    p { margin: 0 0 14px; }
 
     .research-grid {
       display: grid;
@@ -158,6 +162,37 @@
       margin-bottom: 5px;
     }
 
+    .publication {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .publication:last-child { border-bottom: none; }
+
+    .pub-title {
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .pub-meta {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .publication a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .publication a:hover { text-decoration: underline; }
+
+    .cv-box {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
     footer {
       border-top: 1px solid var(--line);
       color: var(--muted);
@@ -166,23 +201,26 @@
       padding: 28px 20px;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 760px) {
       nav {
         align-items: flex-start;
         flex-direction: column;
       }
 
-      .nav-links a {
-        margin: 0 16px 0 0;
+      .hero {
+        grid-template-columns: 1fr;
       }
 
-      main {
-        padding-top: 42px;
+      .profile-photo {
+        width: 210px;
+        height: 210px;
       }
 
       .research-grid {
         grid-template-columns: 1fr;
       }
+
+      main { padding-top: 42px; }
     }
   </style>
 </head>
@@ -194,61 +232,66 @@
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
         <a href="#teaching">Teaching</a>
+        <a href="#cv">CV</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero" style="border-top:none;">
-      <h1>Xun (Vincent) Wang</h1>
-      <p class="role">Assistant Professor of Mechanical Engineering</p>
-      <p class="institution">
-        Leslie A. Rose Department of Mechanical Engineering<br>
-        South Dakota Mines
-      </p>
+    <div class="hero">
+      <img
+        class="profile-photo"
+        src="https://www.sdsmt.edu/about/assets/photos-about/adirectory_photos/wang_xun.jpg"
+        alt="Xun (Vincent) Wang">
 
-      <div class="hero-links">
-        <a class="button primary"
-           href="https://scholar.google.com/citations?user=TKcHS1AAAAAJ&hl=en"
-           target="_blank" rel="noopener">
-          Google Scholar
-        </a>
-        <a class="button" href="#research">Research</a>
-        <a class="button" href="#contact">Contact</a>
+      <div>
+        <h1>Xun (Vincent) Wang</h1>
+        <p class="role">Assistant Professor of Mechanical Engineering</p>
+        <p class="institution">
+          Leslie A. Rose Department of Mechanical Engineering<br>
+          South Dakota School of Mines and Technology
+        </p>
+
+        <div class="hero-links">
+          <a class="button primary"
+             href="https://scholar.google.com/citations?user=TKcHS1AAAAAJ&hl=en"
+             target="_blank" rel="noopener">Google Scholar</a>
+          <a class="button"
+             href="https://www.sdsmt.edu/about/directory/wang_xun.html"
+             target="_blank" rel="noopener">University Profile</a>
+          <a class="button" href="cv.pdf" target="_blank">CV</a>
+        </div>
       </div>
-    </section>
+    </div>
 
     <section id="about">
       <h2>About</h2>
       <p>
         I am an Assistant Professor in the Leslie A. Rose Department of Mechanical
-        Engineering at South Dakota Mines. My work focuses on thermal-fluid sciences,
-        thermal management, energy systems, and sustainable thermal technologies.
+        Engineering at the South Dakota School of Mines and Technology. My research
+        focuses on thermo-fluid science, thermal management, energy systems, and
+        sustainable thermal technologies.
       </p>
     </section>
 
     <section id="research">
       <h2>Research</h2>
-      <p>My current research interests include:</p>
-
       <div class="research-grid">
         <div class="card">
           <strong>Thermal Management</strong>
-          Cooling and heat-transfer technologies for engineering systems.
+          Heat-transfer and cooling technologies for engineering systems.
         </div>
-
         <div class="card">
           <strong>Phase Change Materials</strong>
           Thermal energy storage and temperature-control applications.
         </div>
-
         <div class="card">
           <strong>Waste Heat Recovery</strong>
           Recovery and utilization of low-grade thermal energy.
         </div>
-
         <div class="card">
           <strong>Sustainable Energy Systems</strong>
           Energy-efficient thermal systems and experimental research.
@@ -256,20 +299,86 @@
       </div>
     </section>
 
+    <section id="publications">
+      <h2>Selected Publications</h2>
+
+      <div class="publication">
+        <div class="pub-title">
+          Fatty acid from recycled waste cooking oil as a phase-change material for thermal storage systems
+        </div>
+        <div class="pub-meta">
+          X. Wang, Y. Fu, S. Washburn, T. B. Nguyen, A. Chauhan, S. Shaikh, W. Zhao, H. Wang, and S. Q. Shi.
+          <em>RSC Advances</em>, 16, 5852–5863, 2026.
+          <a href="https://doi.org/10.1039/D5RA07469J" target="_blank" rel="noopener">DOI</a>
+        </div>
+      </div>
+
+      <div class="publication">
+        <div class="pub-title">
+          Effects of moisture contents on temperature control performance of structural firefighters’ gloves with the incorporation of phase change material
+        </div>
+        <div class="pub-meta">
+          X. Wang, W. Zhao, S. S. Xu, and J. Pollard.
+          <em>Fire Safety Journal</em>, 156, 104444, 2025.
+          <a href="https://doi.org/10.1016/j.firesaf.2025.104444" target="_blank" rel="noopener">DOI</a>
+        </div>
+      </div>
+
+      <div class="publication">
+        <div class="pub-title">
+          Bacterial-Retted Hemp Fiber/PLA Composites
+        </div>
+        <div class="pub-meta">
+          L. M. Smith, Y. Fu, R. K. Pittala, X. Wang, et al.
+          <em>Processes</em>, 13(4), 1000, 2025.
+          <a href="https://doi.org/10.3390/pr13041000" target="_blank" rel="noopener">DOI</a>
+        </div>
+      </div>
+
+      <div class="publication">
+        <div class="pub-title">
+          Experimental study on the thermal protection enhancement of novel phase change material integrated structural firefighting gloves under high-heat exposures
+        </div>
+        <div class="pub-meta">
+          X. Wang, W. Zhao, J. Pollard, and S. S. Xu.
+          <em>Case Studies in Thermal Engineering</em>, 56, 104286, 2024.
+          <a href="https://doi.org/10.1016/j.csite.2024.104286" target="_blank" rel="noopener">DOI</a>
+        </div>
+      </div>
+
+      <p style="margin-top:20px;">
+        <a class="button"
+           href="https://scholar.google.com/citations?user=TKcHS1AAAAAJ&hl=en"
+           target="_blank" rel="noopener">View all publications on Google Scholar</a>
+      </p>
+    </section>
+
     <section id="teaching">
       <h2>Teaching</h2>
       <p>
         My teaching interests include thermodynamics, thermal-fluid sciences,
-        engineering design, and experimental methods in mechanical engineering.
+        engineering design, manufacturing, and experimental methods in mechanical engineering.
       </p>
+    </section>
+
+    <section id="cv">
+      <h2>Curriculum Vitae</h2>
+      <div class="cv-box">
+        <p>Academic background, research, publications, teaching, and professional activities.</p>
+        <a class="button primary" href="cv.pdf" target="_blank">View / Download CV</a>
+      </div>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
       <p>
         Leslie A. Rose Department of Mechanical Engineering<br>
-        South Dakota Mines<br>
+        South Dakota School of Mines and Technology<br>
         Rapid City, South Dakota, USA
+      </p>
+      <p>
+        Email:
+        <a href="mailto:xun.wang@sdsmt.edu">xun.wang@sdsmt.edu</a>
       </p>
     </section>
   </main>
